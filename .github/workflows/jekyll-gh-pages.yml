@@ -43,7 +43,7 @@ jobs:
         uses: skywarth/vite-github-pages-deployer@v1.1.0
         with:
           # Public base path string for vite, this affects the routing, history and asset links. Make sure to provide appropriately since Github Pages stores your app in a directory under a subdomain.
-          public_base_path: # optional, default is /${{ github.event.repository.name }}
+          public_base_path: '/birthday'
           # Which folder do you want your Github Page to use as root directory. Usually it is your build output directory such as ./dist
           build_path: './dist'
           # Desired name for the Deployment environment. It is also the exposed artifact name which contains the build output (dist).
