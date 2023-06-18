@@ -19,7 +19,7 @@ export type Person = {
 
 function getQRCode(person: Person, idCanvas: string) {
   const canvas = document.getElementById(idCanvas) as HTMLCanvasElement;
-  const url = window.location.origin + "/#/birthday/game/" + person.id;
+  const url = window.location.origin + "/birthday/#/game/" + person.id;
 
   return QRCode.toCanvas(canvas, url, {
     color: {
