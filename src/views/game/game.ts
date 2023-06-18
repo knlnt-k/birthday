@@ -34,8 +34,8 @@ export default defineComponent({
     handleClickQuest(help: Person["helps"][0]) {
       help.audio.help.play();
     },
-    handleInputAnswer(value: string, help: Person["helps"][0]) {
-      help.value = value;
+    handleInputAnswer(event: InputEvent, help: Person["helps"][0]) {
+      help.value = (event.target as HTMLInputElement).value;
 
       if (help.value.toLowerCase() === help.word.toLowerCase()) {
         help.is_answer = true;

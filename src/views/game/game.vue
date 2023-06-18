@@ -14,7 +14,7 @@
           v-model.trim="help.value"
           :disabled="help.is_answer"
           :placeholder="i === 0 ? '------------->' : ''"
-          @input="handleInputAnswerDebounce($event.target.value, help)"
+          @input="handleInputAnswerDebounce($event, help)"
         />
         <div
           class="helps__item-quest"
