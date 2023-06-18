@@ -7,7 +7,10 @@ export default defineComponent({
   data() {
     return {
       person: null as Person | null,
-      handleInputAnswerDebounce: debounce(this.handleInputAnswer, 1000) as typeof this.handleInputAnswer,
+      handleInputAnswerDebounce: debounce(
+        this.handleInputAnswer,
+        1000
+      ) as typeof this.handleInputAnswer,
     };
   },
   computed: {
@@ -31,7 +34,9 @@ export default defineComponent({
     handleClickQuest(help: Person["helps"][0]) {
       help.audio.help.play();
     },
-    handleInputAnswer(help: Person["helps"][0]) {
+    handleInputAnswer(value: string, help: Person["helps"][0]) {
+      help.value = value;
+
       if (help.value.toLowerCase() === help.word.toLowerCase()) {
         help.is_answer = true;
         help.audio.yes.play();
