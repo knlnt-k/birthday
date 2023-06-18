@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "types": ["qrcode"]
+  },
   "files": [],
   "references": [
     {
