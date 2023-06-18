@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, nextTick } from "vue";
-import { Person, PERSONS } from "@/persons";
+import { type Person, PERSONS } from "@/persons";
 
 const isShowQR = ref(false);
 

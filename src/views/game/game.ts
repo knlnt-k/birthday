@@ -1,5 +1,5 @@
 import { defineComponent } from "vue";
-import { Person, PERSONS } from "@/persons";
+import { type Person, PERSONS } from "@/persons";
 import debounce from "@/debounce";
 
 export default defineComponent({
@@ -7,7 +7,7 @@ export default defineComponent({
   data() {
     return {
       person: null as Person | null,
-      handleInputAnswerDebounce: debounce(this.handleInputAnswer, 1000),
+      handleInputAnswerDebounce: debounce(this.handleInputAnswer, 1000) as typeof this.handleInputAnswer,
     };
   },
   computed: {
