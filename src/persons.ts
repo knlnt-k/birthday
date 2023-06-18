@@ -44,7 +44,9 @@ export const PERSONS: Person[] = [
         value: "",
         audio: {
           help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio("/msc/dashka/yes.m4a"),
+          yes: new Audio(
+            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
+          ),
         },
         is_answer: false,
       },
@@ -53,25 +55,40 @@ export const PERSONS: Person[] = [
         value: "",
         audio: {
           help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio("/msc/dashka/yes.m4a"),
+          yes: new Audio(
+            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
+          ),
         },
         is_answer: false,
-      },{
+      },
+      {
         word: "соль",
         value: "",
         audio: {
           help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio("/msc/dashka/yes.m4a"),
+          yes: new Audio(
+            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
+          ),
         },
         is_answer: false,
       },
     ],
     no: [
-      new Audio("/msc/dashka/no/1.m4a"),
-      new Audio("/msc/dashka/no/2.m4a"),
-      new Audio("/msc/dashka/no/3.m4a"),
-      new Audio("/msc/dashka/no/4.m4a"),
-      new Audio("/msc/dashka/no/5.m4a"),
+      new Audio(
+        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/1.m4a"
+      ),
+      new Audio(
+        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/2.m4a"
+      ),
+      new Audio(
+        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/3.m4a"
+      ),
+      new Audio(
+        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/4.m4a"
+      ),
+      new Audio(
+        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/5.m4a"
+      ),
     ],
   },
   {
