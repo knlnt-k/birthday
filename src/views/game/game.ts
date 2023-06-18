@@ -32,18 +32,18 @@ export default defineComponent({
   },
   methods: {
     handleClickQuest(help: Person["helps"][0]) {
-      help.audio.help.play();
+      new Audio(help.audio.help).play();
     },
     handleInputAnswer(event: InputEvent, help: Person["helps"][0]) {
       help.value = (event.target as HTMLInputElement).value;
 
       if (help.value.toLowerCase() === help.word.toLowerCase()) {
         help.is_answer = true;
-        help.audio.yes.play();
+        new Audio(help.audio.yes).play();
       } else if (this.person) {
-        this.person.no[
-          Math.floor(Math.random() * this.person.no.length)
-        ].play();
+        new Audio(
+          this.person.no[Math.floor(Math.random() * this.person.no.length)]
+        ).play();
       }
     },
   },

@@ -7,14 +7,14 @@ export type Person = {
   color: string;
   helps: {
     audio: {
-      help: HTMLAudioElement;
-      yes: HTMLAudioElement;
+      help: string;
+      yes: string;
     };
     word: string;
     value: string;
     is_answer: boolean;
   }[];
-  no: HTMLAudioElement[];
+  no: string[];
 };
 
 function getQRCode(person: Person, idCanvas: string) {
@@ -43,12 +43,8 @@ export const PERSONS: Person[] = [
         word: "кастрюля",
         value: "",
         audio: {
-          help: new Audio(
-            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
-          ),
-          yes: new Audio(
-            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
-          ),
+          help: "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a",
+          yes: "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a",
         },
         is_answer: false,
       },
@@ -56,10 +52,8 @@ export const PERSONS: Person[] = [
         word: "каша",
         value: "",
         audio: {
-          help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio(
-            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
-          ),
+          help: "/msc/dashka/1.m4a",
+          yes: "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a",
         },
         is_answer: false,
       },
@@ -67,30 +61,18 @@ export const PERSONS: Person[] = [
         word: "соль",
         value: "",
         audio: {
-          help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio(
-            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
-          ),
+          help: "/msc/dashka/1.m4a",
+          yes: "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a",
         },
         is_answer: false,
       },
     ],
     no: [
-      new Audio(
-        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/1.m4a"
-      ),
-      new Audio(
-        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/2.m4a"
-      ),
-      new Audio(
-        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/3.m4a"
-      ),
-      new Audio(
-        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/4.m4a"
-      ),
-      new Audio(
-        "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/5.m4a"
-      ),
+      "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/1.m4a",
+      "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/2.m4a",
+      "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/3.m4a",
+      "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/4.m4a",
+      "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/no/5.m4a",
     ],
   },
   {
@@ -105,8 +87,8 @@ export const PERSONS: Person[] = [
         word: "",
         value: "",
         audio: {
-          help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio("/msc/dashka/1.m4a"),
+          help: "/msc/dashka/1.m4a",
+          yes: "/msc/dashka/1.m4a",
         },
         is_answer: false,
       },
@@ -125,8 +107,8 @@ export const PERSONS: Person[] = [
         word: "",
         value: "",
         audio: {
-          help: new Audio("/msc/dashka/1.m4a"),
-          yes: new Audio("/msc/dashka/1.m4a"),
+          help: "/msc/dashka/1.m4a",
+          yes: "/msc/dashka/1.m4a",
         },
         is_answer: false,
       },
