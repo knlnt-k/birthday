@@ -43,7 +43,9 @@ export const PERSONS: Person[] = [
         word: "кастрюля",
         value: "",
         audio: {
-          help: new Audio("/msc/dashka/1.m4a"),
+          help: new Audio(
+            "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
+          ),
           yes: new Audio(
             "https://github.com/knlnt-k/birthday/raw/main/public/msc/dashka/yes.m4a"
           ),
