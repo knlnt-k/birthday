@@ -97,7 +97,7 @@ export const PERSONS: Person[] = [
     okG: "ок гугл, как да как так то а?",
     start_audio: BASE_PATH + "maks/start_audio.m4a",
     helps: getHelps("maks", [
-      "Опыраш",
+      "Опарыш",
       "img",
       "Каскадеры",
       "Вулкан",
