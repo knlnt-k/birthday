@@ -11,6 +11,7 @@ export default defineComponent({
         this.handleInputAnswer,
         1000
       ) as typeof this.handleInputAnswer,
+      audio: null as HTMLAudioElement | null,
     };
   },
   computed: {
@@ -32,19 +33,57 @@ export default defineComponent({
   },
   methods: {
     handleClickQuest(help: Person["helps"][0]) {
-      new Audio(help.audio.help).play();
+      this.getAudio(help.audio).play();
     },
-    handleInputAnswer(event: InputEvent, help: Person["helps"][0]) {
-      help.value = (event.target as HTMLInputElement).value;
+    async handleInputAnswer(event: InputEvent, help: Person["helps"][0]) {
+      help.value = (event.target as HTMLInputElement).value.trim();
 
       if (help.value.toLowerCase() === help.word.toLowerCase()) {
         help.is_answer = true;
-        new Audio(help.audio.yes).play();
+
+        if (this.person && this.person.helps.every(h => h.is_answer)) {
+          this.finish();
+        } else {
+          await this.getRandomAudio("yes")?.play();
+        }
       } else if (this.person) {
-        new Audio(
-          this.person.no[Math.floor(Math.random() * this.person.no.length)]
-        ).play();
+        this.getRandomAudio("no")?.play();
       }
+    },
+    getRandomAudio(type: "yes" | "no") {
+      if (this.person) {
+        return this.getAudio(
+          this.person[type][
+            Math.floor(Math.random() * this.person[type].length)
+          ]
+        );
+      }
+      return undefined;
+    },
+    async handleClickInput() {
+      if (this.person) {
+        this.getAudio(this.person.start_audio).play();
+      }
+    },
+    async finish() {
+      if (this.person) {
+        const audio = this.getAudio(this.person.finish_word_audio);
+        const okG = encodeURIComponent(this.person.okG);
+
+        await audio.play();
+        audio.addEventListener("ended", () => {
+          window.location.href = "https://www.google.ru/search?q=" + okG;
+        });
+      }
+    },
+    getAudio(src: string): HTMLAudioElement {
+      if (this.audio) {
+        this.audio.src = src;
+      } else {
+        this.audio = new Audio(src);
+      }
+
+      return this.audio as HTMLAudioElement;
     },
   },
 });

@@ -1,5 +1,10 @@
 <template>
-  <main v-if="person" :style="{ backgroundColor: person.color }" class="game">
+  <main
+    v-if="person"
+    :style="{ backgroundColor: person.color }"
+    class="game"
+    @click.once="handleClickInput"
+  >
     <h1>{{ person.name }}</h1>
     <ul class="helps">
       <li class="helps__item" v-for="(help, i) in helpers" :key="i">
